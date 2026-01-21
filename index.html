@@ -61,12 +61,54 @@ body.dark a {
 body.dark .subtitle {
   color: #aaa;
 }
+
+
+    body {
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, p, li, a {
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+
+    @media (max-width: 600px) {
+  body {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .toggle-btn {
+    top: 15px;
+    right: 15px;
+    font-size: 0.8em;
+    padding: 8px 12px;
+  }
+}
+
+    @media print {
+  .toggle-btn {
+    display: none;
+  }
+
+  body {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
   </style>
  
 </head>
 
 <body>
 <button id="themeToggle" class="toggle-btn">🌙 Dark Mode</button>
+  
+<button onclick="window.print()" class="toggle-btn" style="top: 60px;">
+  📄 Save as PDF
+</button>
 <div class="top">
   <h1>Aymen Khazri</h1>
   <p class="subtitle">
