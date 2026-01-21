@@ -99,12 +99,39 @@ h1, h2, p, li, a {
     padding: 20px;
   }
 }
+
+    .controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  background: rgba(0,0,0,0.05);
+  padding: 8px 12px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+}
+
+.controls button {
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.15);
+}
   </style>
  
 </head>
 
 <body>
-<button id="themeToggle" class="toggle-btn">🌙 Dark Mode</button>
+<div class="controls">
+  <button id="themeToggle">🌙</button>
+  <button onclick="window.print()">📄</button>
+</div>
   
 
 <div class="top">
@@ -198,9 +225,6 @@ h1, h2, p, li, a {
   <li><a href="https://aymen-khazrii.github.io/Abouts/" target="_blank">GitHub</a></li>
   <li><a href="CV.pdf" target="_blank">Download CV (PDF)</a></li>
 </ul>
-  <button onclick="window.print()" class="toggle-btn" style="top: 60px;">
-  📄 Save as PDF
-</button>
 <script>
   const toggle = document.getElementById("themeToggle");
 
@@ -208,9 +232,9 @@ h1, h2, p, li, a {
     document.body.classList.toggle("dark");
 
     if (document.body.classList.contains("dark")) {
-      toggle.textContent = "☀️ Light Mode";
+      toggle.textContent = "☀️";
     } else {
-      toggle.textContent = "🌙 Dark Mode";
+      toggle.textContent = "🌙";
     }
   });
 </script>
